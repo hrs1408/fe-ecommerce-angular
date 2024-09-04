@@ -13,6 +13,7 @@ export const AuthenticationRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    pathMatch: 'full',
+    redirectTo: 'login'
   }
 ];

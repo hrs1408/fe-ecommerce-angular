@@ -1,3 +1,86 @@
-<p>
-  {{ 'title' | translate }}
-</p>
+<div class="w-full h-[90px] bg-transparent fixed top-0 left-0 flex">
+  <a href="/" class="flex h-full items-center justify-center px-[30px]">
+    <img src="https://www.aorus.com/assets/img/logo.acad5b52.png.webp" alt="" width="155px">
+  </a>
+  <ul class="h-full flex items-center">
+    <li class="nav-item">
+      {{ "product" | translate }}
+      <span class="material-symbols-outlined arrow">
+      keyboard_arrow_down
+      </span>
+      <ul class="sub-menu w-full flex items-start justify-center gap-4">
+        <li *ngFor="let item of ProductSubMenu">
+          <a class="text-center">
+            <img src="{{item.imgUrl}}" alt="" width="150px">
+            {{ item.name | translate }}
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item relative">
+      {{ "discover" | translate }}
+      <span class="material-symbols-outlined arrow">
+      keyboard_arrow_down
+      </span>
+      <ul class="sub-menu ">
+        <li *ngFor="let item of DiscoverSubMenu">
+          <a href="{{item.path}}">
+            {{ item.name  | translate }}
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item relative">
+      {{ "service" | translate }}
+      <span class="material-symbols-outlined arrow">
+      keyboard_arrow_down
+      </span>
+      <ul class="sub-menu">
+        <li *ngFor="let item of ServiceSubMenu">
+          <a href="{{item.path}}">
+            {{ item.name  | translate }}
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item relative">
+      {{ "member" | translate }}
+      <span class="material-symbols-outlined arrow">
+      keyboard_arrow_down
+      </span>
+      <ul class="sub-menu ">
+        <li *ngFor="let item of DiscoverSubMenu">
+          <a href="{{item.path}}">
+            {{ item.name  | translate }}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="ml-auto text-white flex items-center gap-4 px-[30px]">
+    <a href="/">
+      <img src="https://www.aorus.com/assets/img/logo_gigabyte_white.6c1174a0.png.webp" alt="" width="110px"
+           class="h-[16px]">
+    </a>
+    <div class="flex items-center gap-4 ">
+      <button class="btn">
+        <span class="material-symbols-outlined">
+        search
+        </span>
+      </button>
+      <button class="btn btn-secondary" (click)="authBtnClick()">
+        <span class="material-symbols-outlined">
+        person
+        </span>
+      </button>
+      <select (change)="changeLanguage($event)" class="select-language bg-transparent text-white">
+        <option class="dropdown-item" value="en">
+          EN
+        </option>
+        <option class="dropdown-item" value="vi" selected>
+          VN
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

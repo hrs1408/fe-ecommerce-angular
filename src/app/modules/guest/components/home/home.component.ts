@@ -7,10 +7,4 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private translate: TranslateService) {
-  }
-
-  changeLanguage(event: any) {
-    this.translate.use(event.target.value);
-  }
 }

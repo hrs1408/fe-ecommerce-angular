@@ -1,4 +1,20 @@
 {
   "home_page": "Home",
-  "title": "Title"
+  "title": "Title",
+  "product": "Product",
+  "discover": "Discover",
+  "service": "Service",
+  "member": "Member",
+  "event": "Event",
+  "news": "News",
+  "blog": "Blog",
+  "wallpaper": "Wallpaper",
+  "motherboard": "Motherboard",
+  "vga": "VGA",
+  "laptop": "Laptop",
+  "monitor": "Monitor",
+  "desktop-pc": "Desktop PC",
+  "components": "Components",
+  "guarantee": "Guarantee",
+  "register-product": "Register Product"
 }

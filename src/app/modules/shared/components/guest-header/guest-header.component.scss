@@ -1,0 +1,46 @@
+.nav-item {
+  @apply font-semibold cursor-pointer px-4 h-full text-white flex items-center justify-center uppercase text-[1rem];
+  .sub-menu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 80%;
+    left: 0;
+
+    li {
+      @apply text-white font-normal text-[0.875rem] text-nowrap;
+      a {
+        @apply block py-2 px-4;
+        &:hover {
+          color: #ff6400;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    @apply transition-all duration-300;
+    color: #ff6400 !important;
+
+    .arrow {
+      @apply transform rotate-180 transition-all duration-300;
+    }
+
+    .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(10%);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.select-language {
+  @apply bg-[#1a1a1a] border-none;
+  .dropdown-item {
+    @apply text-white;
+    &:hover {
+      background-color: #ff6400;
+    }
+  }
+}

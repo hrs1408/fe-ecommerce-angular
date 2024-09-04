@@ -1,4 +1,20 @@
 {
   "home_page": "Trang chủ",
-  "title": "Tiêu đề"
+  "title": "Tiêu đề",
+  "product": "Sản phẩm",
+  "discover": "Khám phá",
+  "service": "Dịch vụ",
+  "member": "Thành viên",
+  "event": "Sự kiện",
+  "news": "Tin tức",
+  "blog": "Blog",
+  "wallpaper": "Hình nền",
+  "motherboard": "Bo mạch chủ",
+  "vga": "Card đồ họa",
+  "laptop": "Laptop",
+  "monitor": "Màn hình máy tinh",
+  "desktop-pc": "Máy tính để bàn",
+  "components": "Linh kiện máy tính",
+  "guarantee": "Bảo hành",
+  "register-product": "Đăng ký sản phẩm"
 }

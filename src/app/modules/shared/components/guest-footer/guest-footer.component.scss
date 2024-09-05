@@ -1,0 +1,49 @@
+.footer-top {
+  @apply bg-[#1F1F1F] text-white text-center py-8;
+  .logo {
+    @apply w-[75px] mx-auto;
+  }
+
+  .social-media {
+    @apply flex items-center justify-center gap-4 p-2;
+    a {
+      @apply text-white transition-all duration-300 text-lg;
+      &:hover {
+        color: #ff6400;
+      }
+    }
+  }
+
+  .footer-menu {
+    @apply flex items-start gap-16 py-4 justify-center uppercase;
+    .title {
+      @apply font-semibold text-[1.125rem] text-left;
+    }
+
+    li {
+      @apply text-left text-gray-400 my-1;
+      a {
+        @apply text-[0.875rem] font-normal capitalize;
+        &:hover {
+          @apply text-[#ff6400] transition-all duration-300;
+        }
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  @apply text-center text-white h-[80px] flex flex-col justify-between;
+  .rgb-line {
+    @apply h-[4px] w-full;
+    background: linear-gradient(90deg, #5FF3FA 0%, #739AD8 33.33%, #B55EC5 66.66%, #EA37B3 100%);
+  }
+}
+
+.team-text{
+  @apply text-white text-center text-[1.125rem] font-semibold;
+  &:hover{
+    @apply transition-all duration-300;
+    color: #ff6400;
+  }
+}

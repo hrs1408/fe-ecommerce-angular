@@ -1,1 +1,48 @@
-<p>login works!</p>
+<div class="login-wrapper">
+  <div class="login-form">
+    <h1 class="login-form__title">{{ 'login' | translate }}</h1>
+    <form [formGroup]="formLogin">
+      <div class="login-form__input">
+        <label>
+          {{ 'usermame' | translate }}
+        </label>
+        <input formControlName="usermame" type="text" name="usermame" placeholder="{{ 'usermame' | translate }}"/>
+      </div>
+      <div class="login-form__input">
+        <label>
+          {{ 'password' | translate }}
+        </label>
+        <input formControlName="password" type="password" name="password" placeholder="{{ 'password' | translate }}"/>
+      </div>
+      <div class="flex items-center justify-between mt-4">
+        <div class="save-password">
+          <input type="checkbox" name="savePassword"/>
+          <label>{{ 'save_password' | translate }}</label>
+        </div>
+        <div class="forgot-password">
+          <a href="#">{{ 'forgot_password' | translate }}</a>
+        </div>
+      </div>
+      <div class="social-login">
+        <div class="social-login-text">
+          {{ 'login_with_social_media' | translate }}
+        </div>
+        <div class="social-login-buttons">
+          <button class="btn-icon">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button class="btn-icon">
+            <i class="fab fa-google"></i>
+          </button>
+          <button class="btn-icon">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </div>
+      </div>
+      <div class="group-btn">
+        <button class="btn btn-login" (click)="login()">{{ 'login' | translate }}</button>
+        <button class="btn btn-register" (click)="register()">{{ 'register' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</div>

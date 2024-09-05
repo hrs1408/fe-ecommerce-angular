@@ -1,0 +1,154 @@
+$aorus-orange: #ff6600;
+$background-color: #1a1a1a;
+$text-color: #ffffff;
+$link-color: #cccccc;
+
+.footer-wrapper {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 40px 20px;
+
+  .aorus-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .footer-section {
+        flex: 1 1 200px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+
+        h4 {
+          font-size: 18px;
+          margin-bottom: 15px;
+          color: $aorus-orange;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            margin-bottom: 8px;
+          }
+        }
+
+        a {
+          color: $link-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $text-color;
+          }
+        }
+
+        .newsletter-form {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 10px;
+
+          input[type="email"] {
+            flex: 1 1 150px;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          }
+
+          button {
+            flex: 0 0 auto;
+            padding: 8px 15px;
+            background-color: $aorus-orange;
+            color: $text-color;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: lighten($aorus-orange, 10%);
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 20px;
+      text-align: center;
+
+      .social-icons {
+        margin-bottom: 15px;
+
+        a {
+          color: $link-color;
+          font-size: 20px;
+          margin: 0 10px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $aorus-orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-wrapper {
+    .aorus-footer {
+      .footer-content {
+        flex-direction: column;
+
+        .footer-section {
+          margin-bottom: 30px;
+          text-align: center;
+
+          .newsletter-form {
+            justify-content: center;
+
+            input[type="email"] {
+              flex: 1 1 100%;
+              margin-bottom: 10px;
+            }
+
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-wrapper {
+    padding: 30px 10px;
+
+    .aorus-footer {
+      .footer-content {
+        .footer-section {
+          flex-basis: 100%;
+        }
+      }
+
+      .footer-bottom {
+        .social-icons {
+          a {
+            font-size: 18px;
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,344 @@
+.guest-sub-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000;
+
+  .header-top {
+    @apply h-[70px] border-b-2 flex items-center justify-between px-4 relative;
+    border-bottom-color: #ff6400;
+
+    .logo {
+      @apply w-[135px];
+    }
+
+    .action-right {
+      @apply ml-auto flex items-center gap-4 text-white;
+      // .logo-giga styles removed from here
+    }
+
+    .menu-toggle {
+      @apply cursor-pointer z-10 text-white text-2xl;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ff6400;
+      }
+
+      &.active {
+        color: #ff6400;
+      }
+
+      @media (min-width: 1025px) {
+        @apply hidden;
+      }
+    }
+
+    .desktop-nav {
+      @apply hidden ml-auto;
+
+      @media (min-width: 1025px) {
+        @apply flex;
+      }
+
+      ul {
+        @apply flex items-center;
+
+        li {
+          @apply relative mx-2;
+
+          a {
+            @apply text-white py-2 px-3 hover:text-gray-300 transition-colors duration-200 uppercase font-medium text-sm;
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 50%;
+              width: 0;
+              height: 2px;
+              background-color: #ff6400;
+              transition: all 0.3s ease;
+            }
+
+            &:hover::after {
+              width: 100%;
+              left: 0;
+            }
+          }
+
+          .sub-menu {
+            @apply absolute top-full left-0 bg-black w-48 py-2 hidden shadow-lg rounded-b-md;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+
+            li {
+              @apply block mx-0;
+
+              a {
+                @apply block py-2 px-4 hover:bg-gray-800 text-sm;
+
+                &::after {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          &:hover .sub-menu {
+            @apply block;
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          &.active > a {
+            color: #ff6400;
+
+            &::after {
+              width: 100%;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .action-right {
+      @media (min-width: 1025px) {
+        @apply ml-4;
+      }
+    }
+  }
+
+  .header-bottom {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+    display: block; // Đảm bảo header-bottom luôn hiển thị
+
+    .container {
+      @apply py-2 px-4;
+    }
+
+    .breadcrumb {
+      @apply flex items-center text-sm;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .breadcrumb-item {
+        @apply text-gray-400 flex items-center;
+
+        &:not(:last-child)::after {
+          content: '\f105'; // FontAwesome chevron-right icon
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          @apply mx-2 text-gray-600;
+        }
+
+        a {
+          @apply text-gray-300 hover:text-white transition-colors duration-200;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          i {
+            @apply mr-1;
+          }
+        }
+
+        &.active {
+          @apply text-white;
+        }
+      }
+    }
+  }
+
+  .side-menu {
+    @apply fixed top-0 left-0 h-full w-64 bg-black z-50 transform -translate-x-full transition-transform duration-300 ease-in-out;
+    padding-top: 20px; // Reduced padding-top to accommodate logo
+
+    .close-menu {
+      @apply absolute top-4 right-4 text-white cursor-pointer text-2xl;
+      background: none;
+      border: none;
+      outline: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ff6400;
+      }
+    }
+
+    .side-menu-logo {
+      @apply flex justify-center items-center mb-6;
+      
+      img {
+        @apply w-32; // Adjust width as needed
+      }
+    }
+
+    nav {
+      @apply mt-4; // Add some margin top to separate logo from nav items
+      ul {
+        @apply p-0 m-0 list-none;
+
+        li {
+          @apply border-b border-gray-800;
+
+          a {
+            @apply block py-3 px-4 text-white no-underline transition-colors duration-200;
+
+            &:hover {
+              @apply bg-gray-900;
+            }
+          }
+
+          &.active > a {
+            @apply bg-gray-900;
+          }
+
+          .sub-menu {
+            @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+
+            &.open {
+              @apply max-h-screen;
+            }
+
+            li {
+              @apply border-t border-gray-700;
+
+              a {
+                @apply pl-8 text-gray-300;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .overlay {
+    @apply fixed inset-0 bg-black opacity-0 invisible transition-opacity duration-300 ease-in-out;
+    z-index: 40;
+
+    &.active {
+      @apply opacity-50 visible;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .guest-sub-header {
+    .header-top {
+      .menu-toggle {
+        @apply block;
+      }
+
+      .logo {
+        @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+      }
+    }
+
+    // Xóa bỏ style ẩn header-bottom
+    // .header-bottom {
+    //   @apply hidden;
+    // }
+  }
+}
+
+@media (max-width: 768px) {
+  .guest-sub-header {
+    .header-top {
+      @apply h-[60px];
+
+      .logo {
+        @apply w-[100px];
+      }
+
+      .action-right {
+        @apply gap-2;
+      }
+    }
+
+    .side-menu {
+      padding-top: 60px;
+    }
+
+    .header-bottom {
+      padding: 5px 0; // Giảm padding cho màn hình nhỏ hơn
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .guest-sub-header {
+    .header-top {
+      @apply h-[50px] px-2;
+
+      .logo {
+        @apply w-[80px];
+      }
+
+      .action-right {
+        @apply gap-1;
+      }
+
+      .menu-toggle {
+        @apply text-xl;
+      }
+    }
+
+    .side-menu {
+      @apply w-full;
+      padding-top: 15px; // Further reduce padding for smaller screens
+
+      .side-menu-logo {
+        img {
+          @apply w-24; // Smaller logo for mobile screens
+        }
+      }
+    }
+
+    .header-bottom {
+      padding: 3px 0; // Giảm padding hơn nữa cho màn hình rất nhỏ
+      
+      .breadcrumb {
+        font-size: 0.75rem; // Giảm kích thước font cho màn hình nhỏ
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .guest-sub-header {
+    .header-top {
+      .logo {
+        @apply static transform-none;
+      }
+    }
+
+    .side-menu {
+      @apply hidden;
+    }
+
+    .overlay {
+      @apply hidden;
+    }
+  }
+}

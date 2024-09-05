@@ -22,7 +22,9 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "@syncfusion/ej2-angular-navigations": "^20.4.53",
     "@syncfusion/ej2-base": "^20.4.51",
+    "primeng": "^17.18.9",
     "rxjs": "~7.8.0",
+    "swiper": "^11.1.12",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },

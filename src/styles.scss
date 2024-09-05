@@ -1,8 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
-*{
+* {
   font-family: Roboto, 微軟正黑體, "Microsoft JhengHei", sans-serif;
-;
+}
+
+.wrapper {
+  background-color: black;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
 }

@@ -16,5 +16,17 @@
   "desktop-pc": "Máy tính để bàn",
   "components": "Linh kiện máy tính",
   "guarantee": "Bảo hành",
-  "register-product": "Đăng ký sản phẩm"
+  "register-product": "Đăng ký sản phẩm",
+  "login": "Đăng nhập",
+  "about_us": "Về chúng tôi",
+  "about_giga": "Về GIGABYTE",
+  "about_aorus": "NGUỒN GỐC AORUSVERSE",
+  "copy_right": "© 2021 Công ty Công nghệ GIGABYTE. Bảo toàn mọi quyền.",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "forgot_password": "Quên mật khẩu?",
+  "save_password": "Lưu mật khẩu",
+  "login_with_social_media": "Đăng nhập bằng mạng xã hội",
+  "register": "Đăng ký",
+  "usermame": "Tên người dùng"
 }

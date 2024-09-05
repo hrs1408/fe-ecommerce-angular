@@ -8,9 +8,9 @@ import {KeySync} from "../keySync";
 
 registerLicense(KeySync);
 
-// if (environment.production) {
-//   enableProdMode();
-// }
+if (environment.production) {
+  enableProdMode();
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule, {
   ngZoneEventCoalescing: true

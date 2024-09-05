@@ -1,0 +1,101 @@
+<div class="guest-sub-header wrapper">
+  <div class="header-top">
+    <div class="container h-full flex items-center">
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <i class="fas fa-bars"></i>
+      </button>
+      <img class="logo" src="https://member.aorus.com/images/logo.png" alt="" />
+      <nav class="desktop-nav">
+        <ul>
+          <li *ngFor="let item of NavHeader" [class.active]="activeMenuItem === item.name">
+            <a (click)="toggleSubMenu(item.name)">{{ item.name | translate }}</a>
+            <ul *ngIf="item.name == 'product'" class="sub-menu" [class.open]="activeMenuItem === item.name">
+              <li *ngFor="let subItem of ProductSubMenu">
+                <a href="{{ subItem.path }}">{{ subItem.name | translate }}</a>
+              </li>
+            </ul>
+            <!-- Repeat for other sub-menus -->
+          </li>
+        </ul>
+      </nav>
+      <div class="action-right">
+        
+        <a href="" class="btn">
+          <span class="material-symbols-outlined"> person </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="#">
+            {{ 'login' | translate }}
+          </a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {{ "login" | translate }}
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="side-menu" [class.open]="isMenuOpen">
+    <button class="close-menu" (click)="toggleMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="side-menu-logo">
+      <img src="https://member.aorus.com/images/logo.png" alt="Aorus Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li
+          *ngFor="let item of NavHeader"
+          [class.active]="activeMenuItem === item.name"
+        >
+          <a (click)="toggleSubMenu(item.name)">{{ item.name | translate }}</a>
+          <ul
+            *ngIf="item.name == 'product'"
+            class="sub-menu"
+            [class.open]="activeMenuItem === item.name"
+          >
+            <li *ngFor="let subItem of ProductSubMenu">
+              <a href="{{ subItem.path }}">{{ subItem.name | translate }}</a>
+            </li>
+          </ul>
+          <ul
+            *ngIf="item.name == 'discover'"
+            class="sub-menu"
+            [class.open]="activeMenuItem === item.name"
+          >
+            <li *ngFor="let subItem of DiscoverSubMenu">
+              <a href="{{ subItem.path }}">{{ subItem.name | translate }}</a>
+            </li>
+          </ul>
+          <ul
+            *ngIf="item.name == 'service'"
+            class="sub-menu"
+            [class.open]="activeMenuItem === item.name"
+          >
+            <li *ngFor="let subItem of ServiceSubMenu">
+              <a href="{{ subItem.path }}">{{ subItem.name | translate }}</a>
+            </li>
+          </ul>
+          <ul
+            *ngIf="item.name == 'member'"
+            class="sub-menu"
+            [class.open]="activeMenuItem === item.name"
+          >
+            <li *ngFor="let subItem of ServiceSubMenu">
+              <a href="{{ subItem.path }}">{{ subItem.name | translate }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
+</div>

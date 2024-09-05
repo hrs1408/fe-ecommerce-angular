@@ -1,0 +1,91 @@
+.login-wrapper {
+  @apply w-full py-10;
+  background-image: url("https://member.aorus.com/images/bg2/AORUS-Gaming-Corner-01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .login-form {
+    @apply text-white max-w-[500px] mx-auto p-5 rounded-lg shadow-lg;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    // Thêm padding cho cả hai bên trên màn hình mobile
+    @media (max-width: 640px) {
+      @apply px-8 mx-4;
+    }
+
+    .login-form__title {
+      @apply text-2xl font-bold text-center;
+    }
+
+    .login-form__input {
+      @apply w-full mt-5 flex flex-col;
+      label {
+        @apply text-sm text-gray-400;
+      }
+
+      input {
+        @apply w-full mt-2 p-2 rounded-md bg-gray-800 text-white border border-transparent;
+        //change outline color when click
+        &:focus {
+          @apply outline-none border border-[#ff6400];
+        }
+      }
+    }
+
+    .forgot-password {
+      @apply text-sm text-[#ff6400] text-right mt-2;
+    }
+
+    .save-password {
+      @apply flex items-center gap-2 text-sm text-[#ff6400] text-left mt-2;
+    }
+
+    .social-login {
+      @apply py-6 flex flex-col items-center justify-center gap-4;
+
+      // Điều chỉnh cho màn hình nhỏ
+      @media (max-width: 640px) {
+        @apply gap-6;
+      }
+
+      .social-login-text {
+        @apply text-center;
+      }
+
+      .social-login-buttons {
+        @apply flex items-center justify-center gap-4;
+      }
+
+      .btn-icon {
+        @apply w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center;
+        transition: all 0.3s;
+
+        &:hover {
+          @apply bg-[#ff6400];
+        }
+      }
+    }
+
+    .group-btn {
+      @apply flex gap-4 items-center justify-between mt-5;
+      .btn-login {
+        @apply w-1/2 py-2 rounded-md bg-[#ff6400] text-white;
+        transition: all 0.3s;
+
+        &:hover {
+          @apply bg-[#ff6400] shadow-lg;
+        }
+      }
+
+      .btn-register {
+        @apply w-1/2 py-2 rounded-md bg-gray-800 text-white;
+        transition: all 0.3s;
+
+        &:hover {
+          @apply bg-gray-800 shadow-lg;
+        }
+      }
+    }
+  }
+}

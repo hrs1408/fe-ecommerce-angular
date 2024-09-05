@@ -5,11 +5,19 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {RouterModule} from "@angular/router";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastModule} from "primeng/toast";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
+import {MessageService} from 'primeng/api';
+import {SharedModule} from './modules/shared/shared.module';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,8 +31,14 @@ import {RouterModule} from "@angular/router";
     }),
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    ButtonModule,
+    RippleModule,
+    SharedModule,
+    BreadcrumbModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
   exports: [TranslateModule]
 })
@@ -36,6 +50,6 @@ export class AppModule {
   }
 }
 
-export function httpTranslateLoader(http: HttpClient):any {
+export function httpTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

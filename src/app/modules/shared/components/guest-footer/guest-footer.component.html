@@ -1,0 +1,76 @@
+<div class="wrapper">
+  <div class="footer-top">
+    <img class="logo" src="https://www.aorus.com/assets/img/logo_svg.2fc451ee.svg" alt="">
+    <p class="py-4 text-lg font-semibold team-text">TEAM UP. FIGHT ON.</p>
+    <div class="social-media">
+      <a href="">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+    <div class="footer-menu">
+      <div class="menu-col">
+        <h4 class="title font-semibold">
+          {{ 'about_us' | translate }}
+        </h4>
+        <ul>
+          <li>
+            <a href="">
+              {{ 'about_giga' | translate }}
+            </a>
+          </li>
+          <li>
+            <a href="">
+              {{ 'about_aorus' | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div *ngFor="let item of NavHeader" class="menu-col">
+        <h4 class="title font-semibold">
+          {{ item.name | translate }}
+        </h4>
+        <ul *ngIf="item.name == 'product'">
+          <li *ngFor="let subItem of ProductSubMenu">
+            <a href='{{subItem.path}}'>
+              {{ subItem.name | translate }}
+            </a>
+          </li>
+        </ul>
+        <ul *ngIf="item.name == 'discover'">
+          <li *ngFor="let subItem of DiscoverSubMenu">
+            <a href='{{subItem.path}}'>
+              {{ subItem.name | translate }}
+            </a>
+          </li>
+        </ul>
+        <ul *ngIf="item.name == 'service'">
+          <li *ngFor="let subItem of ServiceSubMenu">
+            <a href='{{subItem.path}}'>
+              {{ subItem.name | translate }}
+            </a>
+          </li>
+        </ul>
+        <ul *ngIf="item.name == 'member'">
+          <li *ngFor="let subItem of ProductSubMenu">
+            <a href='{{subItem.path}}'>
+              {{ subItem.name | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div></div>
+    <p>
+      {{ 'copy_right' | translate }}
+    </p>
+    <div class="rgb-line"></div>
+  </div>
+</div>

@@ -16,5 +16,17 @@
   "desktop-pc": "Desktop PC",
   "components": "Components",
   "guarantee": "Guarantee",
-  "register-product": "Register Product"
+  "register-product": "Register Product",
+  "login": "Login",
+  "about_us": "About Us",
+  "about_giga": "About GIGABYTE",
+  "about_aorus": "ORIGINS OF AORUSVERSE",
+  "copy_right": "© 2021 GIGABYTE Technology Co., Ltd. All rights reserved.",
+  "email": "Email",
+  "password": "Password",
+  "forgot_password": "Forgot password?",
+  "save_password": "Save password",
+  "login_with_social_media": "Login with social media",
+  "register": "Register",
+  "usermame": "Username"
 }
